@@ -16,10 +16,10 @@ jobs:
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build with MSBuild
-      run: msbuild WebFormTest.sln -p:Configuration=Release
+      run: msbuild WebApplication1\WebApplication1.csproj -p:DeployOnBuild=true -p:Configuration=Release -P:PublishProfile=FolderProfile.pubxml'
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
         name: Test Runner 16101996
-        path: .\SampleApi\SampleApi.csproj
+        path: .\WebApplication1\bin\Release\Publish\
   
