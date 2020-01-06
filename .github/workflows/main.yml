@@ -20,6 +20,6 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
-        name: Test.Runner-(${{ github.head_ref }} | sed -E 's|refs/[a-zA-Z]+/||')
+        name: Test.Runner-$(${{github.head_ref}} | sed -E 's|refs/[a-zA-Z]+/||')
         path: .\WebApplication1\bin\Release\Publish\
   
