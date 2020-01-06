@@ -12,11 +12,11 @@ jobs:
     - name: Setup Nuget.exe
       uses: warrenbuckley/Setup-Nuget@v1
     - name: Restore packages
-      run: nuget restore WebFormTest
+      run: nuget restore WebFormTestGit\WebFormTest.sln
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build with MSBuild
-      run: msbuild  WebFormTest -p:Configuration=Release
+      run: msbuild  WebFormTestGit\WebFormTest.sln -p:Configuration=Release
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
