@@ -16,7 +16,7 @@ jobs:
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Build with MSBuild
-      run: msbuild WebApplication1\WebApplication1.csproj -p:DeployOnBuild=true -p:Configuration=Release -P:PublishProfile=FolderProfile.pubxml'
+      run: msbuild WebApplication1\WebApplication1.csproj -p:DeployOnBuild=true -p:Configuration=Release -P:PublishProfile=FolderProfile.pubxml
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
