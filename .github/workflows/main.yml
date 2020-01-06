@@ -20,6 +20,6 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
-        name: Test.Runner-${{github.head_ref}}
+        name: Test.Runner-${{env.BRANCH_NAME}}
         path: .\WebApplication1\bin\Release\Publish\
   
