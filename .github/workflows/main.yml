@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Define Variable
-      run: echo ::set-env name=BRANCH_NAME::${GITHUB_REF:11}
+      run: echo ::set-env name=BRANCH_NAME::${GITHUB_REF}
     - uses: actions/checkout@v1
     - name: Setup Nuget.exe
       uses: warrenbuckley/Setup-Nuget@v1
