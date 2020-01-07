@@ -8,9 +8,10 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - name: Define Variable
+    - name: Define SHORT_HASH Variable
       run: echo "::set-env name=SHORT_HASH::$(git rev-parse --short ${{github.sha}})"
-      run: echo "::set-env name=BRANCH_NAME::$(git rev-parse --abbrev-ref HEAD)"
+    - name: Define BRANCH_NAME Variable
+      run: echo "::set-env name=BRANCH_NAME::$(git rev-parse --abbrev-ref HEAD)";
     - name: Check Out Current Branch
       uses: actions/checkout@v1
     - name: Setup Nuget.exe
