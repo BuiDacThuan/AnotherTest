@@ -8,6 +8,8 @@ jobs:
     runs-on: self-hosted
 
     steps:
+    - name: Define Variable
+      run: echo "::set-env name=BRANCH_NAME::${GITHUB_REF:11}"
     - uses: actions/checkout@v1
     - name: Setup Nuget.exe
       uses: warrenbuckley/Setup-Nuget@v1
@@ -20,6 +22,6 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
-        name: Test.Runner-${GITHUB_REF:11}
+        name: Test.Runner-${{env.BRANCH_NAME}}
         path: .\WebApplication1\bin\Release\Publish\
   
