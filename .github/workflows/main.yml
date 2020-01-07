@@ -10,8 +10,10 @@ jobs:
     steps:
     - name: Define Variable
       run: echo "::set-env name=SHORT_HASH::$(git rev-parse --short ${{github.sha}})"
-    - uses: nelonoel/branch-name@v1
-    - uses: actions/checkout@v1
+    - name: Get Branch Name Variable
+      uses: nelonoel/branch-name@v1
+    - name: Check Out Branch ${{env.BRANCH_NAME}}
+      uses: actions/checkout@v1
     - name: Setup Nuget.exe
       uses: warrenbuckley/Setup-Nuget@v1
     - name: Restore packages
