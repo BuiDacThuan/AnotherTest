@@ -12,7 +12,7 @@ jobs:
       run: echo "::set-env name=SHORT_HASH::$(git rev-parse --short ${{github.sha}})"
     - name: Get Branch Name Variable
       uses: nelonoel/branch-name@v1
-    - name: Check Out Branch ${{env.BRANCH_NAME}}
+    - name: Check Out Current Branch
       uses: actions/checkout@v1
     - name: Setup Nuget.exe
       uses: warrenbuckley/Setup-Nuget@v1
