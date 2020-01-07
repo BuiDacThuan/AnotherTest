@@ -21,6 +21,6 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
-        name: Test.Runner-${{ env.BRANCH_NAME}}-${{ env.GITHUB_SHA_SHORT }}
+        name: Test.Runner-${{ env.BRANCH_NAME}}-${{env.GITHUB_SHA::8}}
         path: .\WebApplication1\bin\Release\Publish\
   
