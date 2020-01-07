@@ -28,5 +28,5 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: Test.Runner-${{env.GITHUB_REF}##*/}-${{env.SHORT_HASH}}
-        path: .\WebApplication1\bin\Release\Publish\
+        path: .\WebApplication1\bin\Release
   
