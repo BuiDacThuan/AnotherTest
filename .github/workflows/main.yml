@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Define Variable
-      run: echo ::set-env name=SHORT_HASH::git rev-parse --short ${{github.sha}}
+      run: echo "::set-env name=SHORT_HASH::git rev-parse --short ${{github.sha}}"
     - uses: nelonoel/branch-name@v1
     - uses: actions/checkout@v1
     - name: Setup Nuget.exe
