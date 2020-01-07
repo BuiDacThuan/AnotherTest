@@ -11,11 +11,11 @@ jobs:
     - name: Define SHORT_HASH Variable
       run: echo "::set-env name=SHORT_HASH::$(git rev-parse --short ${{github.sha}})"
     - name: Get BRANCH_NAME Variable
-      uses: nelonoel/branch-name@v1
+      uses: nelonoel/branch-name@master
     - name: Check Out Current Branch
-      uses: actions/checkout@v1
+      uses: actions/checkout@master
     - name: Setup Nuget.exe
-      uses: warrenbuckley/Setup-Nuget@v1
+      uses: warrenbuckley/Setup-Nuget@master
     - name: Restore packages
       run: nuget restore WebFormTest.sln
     - name: Define MSBUILD_PATH Variable
@@ -25,8 +25,8 @@ jobs:
         & "${{env.MSBUILD_PATH}}" WebApplication1\WebApplication1.vbproj -p:Configuration=Release
         & "${{env.MSBUILD_PATH}}" WebApplication1\WebApplication1.vbproj -p:DeployOnBuild=true -p:Configuration=Release -P:PublishProfile=FolderProfile.pubxml
     - name: Upload Artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@master
       with:
-        name: Test.Runner-${{env.SHORT_HASH}}.zip
+        name: Test.Runner-${{env.SHORT_HASH}}
         path: .\WebApplication1\bin\Release
   
