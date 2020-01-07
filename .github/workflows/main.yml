@@ -21,6 +21,6 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
-        name: Test.Runner-${{env.BRANCH_NAME}}-${{env.CF_SHORT_REVISION}} 
+        name: Test.Runner-${{env.BRANCH_NAME}}-%CF_SHORT_REVISION% 
         path: .\WebApplication1\bin\Release\Publish\
   
