@@ -10,8 +10,8 @@ jobs:
     steps:
     - name: Define SHORT_HASH Variable
       run: echo "::set-env name=SHORT_HASH::$(git rev-parse --short ${{github.sha}})"
-    - name: Define BRANCH_NAME Variable
-      run: echo "::set-env name=BRANCH_NAME::$(git rev-parse --abbrev-ref HEAD)";
+    - name: Get BRANCH_NAME Variable
+      uses: nelonoel/branch-name@v1
     - name: Check Out Current Branch
       uses: actions/checkout@v1
     - name: Setup Nuget.exe
