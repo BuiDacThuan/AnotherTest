@@ -24,9 +24,11 @@ jobs:
       run: |
         & "${{env.MSBUILD_PATH}}" WebApplication1\WebApplication1.vbproj -p:Configuration=Release
         & "${{env.MSBUILD_PATH}}" WebApplication1\WebApplication1.vbproj -p:DeployOnBuild=true -p:Configuration=Release -P:PublishProfile=FolderProfile.pubxml
+    - name: Zip Folder
+      run: Compress-Archive -Path .\WebApplication1\bin\Release -DestinationPath .\WebApplication1\bin\Release\WEbProject.Zip
     - name: Upload Artifact
       uses: actions/upload-artifact@master
       with:
-        name: Test.Runner-${{env.SHORT_HASH}}.zip
-        path: .\WebApplication1\bin\Release
+        name: Test.Runner-${{env.SHORT_HASH}}
+        path: .\WebApplication1\bin\Release\WEbProject.Zip
   
